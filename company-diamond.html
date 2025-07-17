@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CAC Company/Private Limited Liability Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { background: #fdfaf7; font-family: 'Segoe UI', sans-serif; }
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 { color: #0c0c2b; text-align: center; }
+    .btn-orange { background-color: #FFA726; color: white; border: none; }
+    .btn-orange:hover { background-color: #fb8c00; }
+    .popup-box {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none; justify-content: center; align-items: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <h1>CAC Company/Private Limited Liability Registration</h1>
+  <form id="cacForm" action="https://formsubmit.co/olaitanyusuff03@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="text" name="Package" class="form-control mb-2" value="Diamond Package Registration" readonly>
+
+    <h5 class="mt-4">School Name Options</h5>
+    <input name="School Name Option 1" class="form-control mb-2" placeholder="School Name Option 1 (ending with LTD)" required>
+    <input name="School Name Option 2" class="form-control mb-2" placeholder="School Name Option 2 (ending with LTD)" required>
+
+    <h5 class="mt-4">Director Details</h5>
+    <input name="Director Surname" class="form-control mb-2" placeholder="Director Surname" required>
+    <input name="Director First Name" class="form-control mb-2" placeholder="Director First Name" required>
+    <input name="Director Other Name" class="form-control mb-2" placeholder="Director Other Name">
+    <label>Date of Birth</label>
+    <input name="Director Date of Birth" type="date" class="form-control mb-2" required>
+    <select name="Director Gender" class="form-control mb-2" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+    <input name="Director Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number" required>
+    <input name="Director Email" type="email" class="form-control mb-2" placeholder="Email" required>
+    <label>Signature</label>
+    <input name="Director Signature" type="file" class="form-control mb-2" required>
+    <label>Means of ID (PVC/National ID)</label>
+    <input name="Director Means of ID" type="file" class="form-control mb-2" required>
+    <label>Passport Photograph</label>
+    <input name="Director Passport Photograph" type="file" class="form-control mb-2" required>
+
+
+    <h5 class="mt-4">Residential Address</h5>
+    <label>State</label>
+    <select id="residentialState" name="Residential State" class="form-control mb-2" required>
+      <option value="">Select State</option>
+    </select>
+    <label>LGA</label>
+    <select id="residentialLGA" name="Residential LGA" class="form-control mb-2" required>
+      <option value="">Select LGA</option>
+    </select>
+    <input name="Residential City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village" required>
+    <input name="Residential House No" class="form-control mb-2" placeholder="House Number" required>
+    <input name="Residential Street Name" class="form-control mb-2" placeholder="Street Name" required>
+
+    <h5 class="mt-4">Business Address</h5>
+    <label>State</label>
+    <select id="businessState" name="Business State" class="form-control mb-2" required>
+      <option value="">Select State</option>
+    </select>
+    <label>LGA</label>
+    <select id="businessLGA" name="Business LGA" class="form-control mb-2" required>
+      <option value="">Select LGA</option>
+    </select>
+    <input name="Business City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village" required>
+    <input name="Business House No" class="form-control mb-2" placeholder="House Number" required>
+    <input name="Business Street Name" class="form-control mb-2" placeholder="Street Name" required>
+
+    <h5 class="mt-4">Nature of Business</h5>
+    <textarea name="Nature of Business" class="form-control mb-2" placeholder="Describe the nature of your business" rows="3" required></textarea>
+
+    <h5 class="mt-4">Share Capital of the Company (Percentage)</h5>
+    <input name="Share Capital Percentage" class="form-control mb-2" placeholder="e.g., 100% or 50%" required>
+
+    <h5 class="mt-4">Particulars of Director(s) - Additional Directors</h5>
+    <p class="text-muted">You can add details for multiple directors here. If only one, repeat the main director's info or leave blank if not applicable for more.</p>
+    <div id="additionalDirectorsContainer">
+        <div class="director-item border p-3 mb-3 rounded">
+            <h6>Director 1</h6>
+            <input name="Director 1 First Name" class="form-control mb-2" placeholder="First Name">
+            <input name="Director 1 Last Name" class="form-control mb-2" placeholder="Last Name">
+            <label>State</label>
+            <select name="Director 1 State" class="form-control mb-2 director-state">
+              <option value="">Select State</option>
+            </select>
+            <label>LGA</label>
+            <select name="Director 1 LGA" class="form-control mb-2 director-lga">
+              <option value="">Select LGA</option>
+            </select>
+            <input name="Director 1 City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village">
+            <input name="Director 1 House No" class="form-control mb-2" placeholder="House Number">
+            <input name="Director 1 Street Name" class="form-control mb-2" placeholder="Street Name">
+            <label>Means of ID (PVC/National ID)</label>
+            <input name="Director 1 Means of ID" type="file" class="form-control mb-2">
+            <label>Date of Birth</label>
+            <input name="Director 1 Date of Birth" type="date" class="form-control mb-2">
+            <select name="Director 1 Gender" class="form-control mb-2">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input name="Director 1 Email" type="email" class="form-control mb-2" placeholder="Email">
+            <label>Signature</label>
+            <input name="Director 1 Signature" type="file" class="form-control mb-2">
+            <input name="Director 1 Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number">
+            <label>Passport photograph</label>
+            <input name="Director 1 Passport photograph" type="file" class="form-control mb-2">
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary btn-sm mb-3" onclick="addDirectorField()">Add Another Director</button>
+
+
+    <h5 class="mt-4">Witness Details</h5>
+    <input name="Witness First Name" class="form-control mb-2" placeholder="First Name" required>
+    <input name="Witness Last Name" class="form-control mb-2" placeholder="Last Name" required>
+    <label>State</label>
+    <select id="witnessState" name="Witness State" class="form-control mb-2" required>
+      <option value="">Select State</option>
+    </select>
+    <label>LGA</label>
+    <select id="witnessLGA" name="Witness LGA" class="form-control mb-2" required>
+      <option value="">Select LGA</option>
+    </select>
+    <input name="Witness City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village" required>
+    <input name="Witness House No" class="form-control mb-2" placeholder="House Number" required>
+    <input name="Witness Street Name" class="form-control mb-2" placeholder="Street Name" required>
+    <input name="Witness Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number" required>
+    <label>Date of Birth</label>
+    <input name="Witness Date of Birth" type="date" class="form-control mb-2" required>
+    <input name="Witness Email" type="email" class="form-control mb-2" placeholder="Email" required>
+    <label>Means of ID (PVC/National ID)</label>
+    <input name="Witness Means of ID" type="file" class="form-control mb-2" required>
+    <label>Passport photograph</label>
+    <input name="Witness Passport photograph" type="file" class="form-control mb-2" required>
+    <label>Signature</label>
+    <input name="Witness Signature" type="file" class="form-control mb-2" required>
+
+    <h5 class="mt-4">Shareholder(s) Details</h5>
+    <p class="text-muted">You can add details for multiple shareholders here.</p>
+    <div id="shareholdersContainer">
+        <div class="shareholder-item border p-3 mb-3 rounded">
+            <h6>Shareholder 1</h6>
+            <input name="Shareholder 1 First Name" class="form-control mb-2" placeholder="First Name" required>
+            <input name="Shareholder 1 Last Name" class="form-control mb-2" placeholder="Last Name" required>
+            <label>State</label>
+            <select name="Shareholder 1 State" class="form-control mb-2 shareholder-state" required>
+              <option value="">Select State</option>
+            </select>
+            <label>LGA</label>
+            <select name="Shareholder 1 LGA" class="form-control mb-2 shareholder-lga" required>
+              <option value="">Select LGA</option>
+            </select>
+            <input name="Shareholder 1 City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village" required>
+            <input name="Shareholder 1 House No" class="form-control mb-2" placeholder="House Number" required>
+            <input name="Shareholder 1 Street Name" class="form-control mb-2" placeholder="Street Name" required>
+            <input name="Shareholder 1 Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number" required>
+            <label>Date of Birth</label>
+            <input name="Shareholder 1 Date of Birth" type="date" class="form-control mb-2" required>
+            <input name="Shareholder 1 Email" type="email" class="form-control mb-2" placeholder="Email" required>
+            <label>Means of ID (PVC/National ID)</label>
+            <input name="Shareholder 1 Means of ID" type="file" class="form-control mb-2" required>
+            <label>Passport photograph</label>
+            <input name="Shareholder 1 Passport photograph" type="file" class="form-control mb-2" required>
+            <label>Signature</label>
+            <input name="Shareholder 1 Signature" type="file" class="form-control mb-2" required>
+            <input name="Shareholder 1 Percentage of Shares" class="form-control mb-2" placeholder="Percentage of Shares (e.g., 50%)" required>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary btn-sm mb-3" onclick="addShareholderField()">Add Another Shareholder</button>
+
+
+    <h5 class="mt-4">Particulars of Secretary (OPTIONAL)</h5>
+    <input name="Secretary First Name" class="form-control mb-2" placeholder="First Name">
+    <input name="Secretary Last Name" class="form-control mb-2" placeholder="Last Name">
+    <label>State</label>
+    <select id="secretaryState" name="Secretary State" class="form-control mb-2">
+      <option value="">Select State</option>
+    </select>
+    <label>LGA</label>
+    <select id="secretaryLGA" name="Secretary LGA" class="form-control mb-2">
+      <option value="">Select LGA</option>
+    </select>
+    <input name="Secretary City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village">
+    <input name="Secretary House No" class="form-control mb-2" placeholder="House Number">
+    <input name="Secretary Street Name" class="form-control mb-2" placeholder="Street Name">
+    <input name="Secretary Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number">
+    <input name="Secretary Email" type="email" class="form-control mb-2" placeholder="Email">
+    <label>Means of ID (PVC/National ID)</label>
+    <input name="Secretary Means of ID" type="file" class="form-control mb-2">
+    <label>Passport photograph</label>
+    <input name="Secretary Passport photograph" type="file" class="form-control mb-2">
+    <label>Signature</label>
+    <input name="Secretary Signature" type="file" class="form-control mb-4">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <button type="submit" class="btn btn-orange w-100">Submit</button>
+
+  </form>
+</div>
+
+<div id="popupBox" class="popup-box">
+  <div class="popup-content">
+    <h5 class="text-success">✅ Submitted Successfully</h5>
+    <p>Click below to proceed to payment.</p>
+    <button onclick="payWithPaystack()" class="btn btn-orange">Proceed to Payment</button><br><br>
+    <button onclick="closePopup()" class="btn btn-secondary">Close</button>
+  </div>
+</div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  function showPopup() {
+    document.getElementById("popupBox").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popupBox").style.display = "none";
+  }
+
+  const form = document.getElementById("cacForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        showPopup();
+      } else {
+        alert("Submission failed.");
+      }
+    });
+  });
+
+  function payWithPaystack() {
+    const email = document.querySelector("input[name='Director Email']").value; // Using Director Email for payment
+    var handler = PaystackPop.setup({
+      key: 'pk_test_xxxxxxxxxxxxxxxxxx', // Replace with your Paystack key
+      email: email,
+      amount: 21000 * 100, // Amount in kobo (21000 NGN)
+      currency: 'NGN',
+      ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+      callback: function(response){
+        window.location.href = "upload-receipt.html";
+      },
+      onClose: function(){
+        alert("Payment cancelled");
+      }
+    });
+    handler.openIframe();
+  }
+
+  // Populate States and LGAs
+  const nigeriaLGAs = {
+  "Abia": ["Aba North", "Aba South", "Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isiala Ngwa South", "Isuikwuato", "Obi Ngwa", "Ohafia", "Osisioma", "Ugwunagbo", "Ukwa East", "Ukwa West", "Umuahia North", "Umuahia South", "Umu Nneochi"],
+  "Adamawa": ["Demsa", "Fufore", "Ganye", "Girei", "Gombi", "Guyuk", "Hong", "Jada", "Lamurde", "Madagali", "Maiha", "Mayo Belwa", "Michika", "Mubi North", "Mubi South", "Numan", "Shelleng", "Song", "Toungo", "Yola North", "Yola South"],
+  "Akwa Ibom": ["Abak", "Eastern Obolo", "Eket", "Esit Eket", "Essien Udim", "Etim Ekpo", "Etinan", "Ibeno", "Ibesikpo Asutan", "Ibiono Ibom", "Ika", "Ikono", "Ikot Abasi", "Ikot Ekpene", "Ini", "Itu", "Mbo", "Mkpat Enin", "Nsit Atai", "Nsit Ibom", "Nsit Ubium", "Obot Akara", "Okobo", "Onna", "Oron", "Oruk Anam", "Udung Uko", "Ukanafun", "Uruan", "Urue-Offong/Oruko", "Uyo"],
+  "Anambra": ["Aguata", "Anambra East", "Anambra West", "Anaocha", "Awka North", "Awka South", "Ayamelum", "Dunukofia", "Ekwusigo", "Idemili North", "Idemili South", "Ihiala", "Njikoka", "Nnewi North", "Nnewi South", "Ogbaru", "Onitsha North", "Onitsha South", "Orumba North", "Orumba South", "Oyi"],
+  "Bauchi": ["Alkaleri", "Bauchi", "Bogoro", "Damban", "Darazo", "Dass", "Gamawa", "Ganjuwa", "Giade", "Itas/Gadau", "Jama'are", "Katagum", "Kirfi", "Misau", "Ningi", "Shira", "Tafawa Balewa", "Toro", "Warji", "Zaki"],
+  "Bayelsa": ["Brass", "Ekeremor", "Kolokuma/Opokuma", "Nembe", "Ogbia", "Sagbama", "Southern Ijaw", "Yenagoa"],
+  "Benue": ["Ado", "Agatu", "Apa", "Buruku", "Gboko", "Guma", "Gwer East", "Gwer West", "Katsina-Ala", "Konshisha", "Kwande", "Logo", "Makurdi", "Obi", "Ogbadibo", "Ohimini", "Oju", "Okpokwu", "Otukpo", "Tarka", "Ukum", "Ushongo", "Vandeikya"],
+  "Borno": ["Abadam", "Askira/Uba", "Bama", "Bayo", "Biu", "Chibok", "Damboa", "Dikwa", "Gubio", "Guzamala", "Gwoza", "Hawul", "Jere", "Kaga", "Kala/Balge", "Konduga", "Kukawa", "Kwaya Kusar", "Mafa", "Magumeri", "Maiduguri", "Marte", "Mobbar", "Monguno", "Ngala", "Nganzai", "Shani"],
+  "Cross River": ["Abi", "Akamkpa", "Akpabuyo", "Bakassi", "Bekwarra", "Biase", "Boki", "Calabar Municipal", "Calabar South", "Etung", "Ikom", "Obanliku", "Obubra", "Obudu", "Odukpani", "Ogoja", "Yakurr", "Yala"],
+  "Delta": ["Aniocha North", "Aniocha South", "Bomadi", "Burutu", "Ethiope East", "Ethiope West", "Ika North East", "Ika South", "Isoko North", "Isoko South", "Ndokwa East", "Ndokwa West", "Okpe", "Oshimili North", "Oshimili South", "Patani", "Sapele", "Udu", "Ughelli North", "Ughelli South", "Ukwuani", "Uvwie", "Warri North", "Warri South", "Warri South West"],
+  "Ebonyi": ["Abakaliki", "Afikpo North", "Afikpo South", "Ebonyi", "Ezza North", "Ezza South", "Ikwo", "Ishielu", "Ivo", "Izzi", "Ohaozara", "Ohaukwu", "Onicha"],
+  "Edo": ["Akoko-Edo", "Egor", "Esan Central", "Esan North-East", "Esan South-East", "Esan West", "Etsako Central", "Etsako East", "Etsako West", "Igueben", "Ikpoba-Okha", "Oredo", "Orhionmwon", "Ovia North-East", "Ovia South-West", "Owan East", "Owan West", "Uhunmwonde"],
+  "Ekiti": ["Ado Ekiti", "Efon", "Ekiti East", "Ekiti South-West", "Ekiti West", "Emure", "Gbonyin", "Ido Osi", "Ijero", "Ikere", "Ikole", "Ilejemeje", "Irepodun/Ifelodun", "Ise/Orun", "Moba", "Oye"],
+  "Enugu": ["Aninri", "Awgu", "Enugu East", "Enugu North", "Enugu South", "Ezeagu", "Igbo Etiti", "Igbo Eze North", "Igbo Eze South", "Isi Uzo", "Nkanu East", "Nkanu West", "Nsukka", "Oji River", "Udenu", "Udi", "Uzo Uwani"],
+  "FCT": ["Abaji", "Bwari", "Gwagwalada", "Kuje", "Kwali", "Municipal Area Council"],
+  "Gombe": ["Akko", "Balanga", "Billiri", "Dukku", "Funakaye", "Gombe", "Kaltungo", "Kwami", "Nafada", "Shongom", "Yamaltu/Deba"],
+  "Imo": ["Aboh Mbaise", "Ahiazu Mbaise", "Ehime Mbano", "Ezinihitte", "Ideato North", "Ideato South", "Ihitte/Uboma", "Ikeduru", "Isiala Mbano", "Isu", "Mbaitoli", "Ngor Okpala", "Njaba", "Nkwerre", "Nwangele", "Obowo", "Oguta", "Ohaji/Egbema", "Okigwe", "Orlu", "Orsu", "Oru East", "Oru West", "Owerri Municipal", "Owerri North", "Owerri West"],
+  "Jigawa": ["Auyo", "Babura", "Biriniwa", "Birnin Kudu", "Buji", "Dutse", "Gagarawa", "Garki", "Gumel", "Guri", "Gwaram", "Gwiwa", "Hadejia", "Jahun", "Kafin Hausa", "Kaugama", "Kazaure", "Kiri Kasama", "Kiyawa", "Maigatari", "Malam Madori", "Miga", "Ringim", "Roni", "Sule Tankarkar", "Taura", "Yankwashi"],
+  "Kaduna": ["Birnin Gwari", "Chikun", "Giwa", "Igabi", "Ikara", "Jaba", "Jema'a", "Kachia", "Kaduna North", "Kaduna South", "Kagarko", "Kajuru", "Kaura", "Kauru", "Kubau", "Kudan", "Lere", "Makarfi", "Sabon Gari", "Sanga", "Soba", "Zangon Kataf", "Zaria"],
+  "Kano": ["Ajingi", "Albasu", "Bagwai", "Bebeji", "Bichi", "Bunkure", "Dala", "Dambatta", "Dawakin Kudu", "Dawakin Tofa", "Doguwa", "Fagge", "Gabasawa", "Garko", "Garun Mallam", "Gaya", "Gezawa", "Gwale", "Gwarzo", "Kabo", "Kano Municipal", "Karaye", "Kibiya", "Kiru", "Kumbotso", "Kunchi", "Kura", "Madobi", "Makoda", "Minjibir", "Nasarawa", "Rano", "Rimin Gado", "Rogo", "Shanono", "Sumaila", "Takai", "Tarauni", "Tofa", "Tsanyawa", "Tudun Wada", "Ungogo", "Warawa", "Wudil"],
+  "Katsina": ["Bakori", "Batagarawa", "Batsari", "Baure", "Bindawa", "Charanchi", "Dandume", "Danja", "Dan Musa", "Daura", "Dutsi", "Dutsin-Ma", "Faskari", "Funtua", "Ingawa", "Jibia", "Kafur", "Kaita", "Kankara", "Kankia", "Katsina", "Kurfi", "Kusada", "Mai'Adua", "Malumfashi", "Mani", "Mashi", "Matazuu", "Musawa", "Rimi", "Sabuwa", "Safana", "Sandamu", "Zango"],
+  "Kebbi": ["Aleiro", "Arewa-Dandi", "Argungu", "Augie", "Bagudo", "Birnin Kebbi", "Bunza", "Dandi", "Fakai", "Gwandu", "Jega", "Kalgo", "Koko/Besse", "Maiyama", "Ngaski", "Sakaba", "Shanga", "Suru", "Wasagu/Danko", "Yauri", "Zuru"],
+  "Kogi": ["Adavi", "Ajaokuta", "Ankpa", "Bassa", "Dekina", "Ibaji", "Idah", "Igalamela-Odolu", "Ijumu", "Kabba/Bunu", "Kogi", "Lokoja", "Mopa-Muro", "Ofu", "Ogori/Mangongo", "Okehi", "Okene", "Olamabolo", "Omala", "Yagba East", "Yagba West"],
+  "Lagos": ["Agege", "Ajeromi-Ifelodun", "Alimosho", "Amuwo-Odofin", "Apapa", "Badagry", "Epe", "Eti-Osa", "Ibeju/Lekki", "Ifako-Ijaye", "Ikeja", "Ikorodu", "Kosofe", "Lagos Island", "Lagos Mainland", "Mushin", "Ojo", "Oshodi-Isolo", "Shomolu", "Surulere"],
+  "Nasarawa": ["Akwanga", "Awe", "Doma", "Karu", "Keana", "Keffi", "Kokona", "Lafia", "Nasarawa", "Nasarawa-Eggon", "Obi", "Toto", "Wamba"],
+  "Niger": ["Agaie", "Agwara", "Bida", "Borgu", "Bosso", "Chanchaga", "Edati", "Gbako", "Gurara", "Katcha", "Kontagora", "Lapai", "Lavun", "Magama", "Mariga", "Mashegu", "Mokwa", "Muya", "Pailoro", "Rafi", "Rijau", "Shiroro", "Suleja", "Tafa", "Wushishi"],
+  "Ogun": ["Abeokuta North", "Abeokuta South", "Ado-Odo/Ota", "Yewa North", "Yewa South", "Ewekoro", "Ifo", "Ijebu East", "Ijebu North", "Ijebu North East", "Ijebu Ode", "Ikenne", "Imeko-Afon", "Ipokia", "Obafemi-Owode", "Ogun Waterside", "Odeda", "Odogbolu", "Remo North", "Shagamu"],
+  "Ondo": ["Akoko North East", "Akoko North West", "Akoko South Akure East", "Akoko South West", "Akure North", "Akure South", "Ese-Odo", "Idanre", "Ifedore", "Ilaje", "Ile-Oluji", "Okeigbo", "Irele", "Odigbo", "Okitipupa", "Ondo East", "Ondo West", "Ose", "Owo"],
+  "Osun": ["Aiyedade", "Aiyedire", "Atakumosa East", "Atakumosa West", "Boluwaduro", "Boripe", "Ede North", "Ede South", "Egbedore", "Ejigbo", "Ife Central", "Ife East", "Ife North", "Ife South", "Ifedayo", "Ifelodun", "Ila", "Ilesha East", "Ilesha West", "Irepodun", "Irewole", "Isokan", "Iwo", "Obokun", "Odo-Otin", "Ola-Oluwa", "Olorunda", "Oriade", "Orolu", "Osogbo"],
+  "Oyo": ["Afijio", "Akinyele", "Atiba", "Atisbo", "Egbeda", "Ibadan Central", "Ibadan North", "Ibadan North West", "Ibadan South East", "Ibadan South West", "Ibarapa Central", "Ibarapa East", "Ibarapa North", "Ido", "Irepo", "Iseyin", "Itesiwaju", "Iwajowa", "Kajola", "Lagelu Ogbomosho North", "Ogbomosho South", "Ogo Oluwa", "Olorunsogo", "Oluyole", "Ona-Ara", "Orelope", "Ori Ire", "Oyo East", "Oyo West", "Saki East", "Saki West", "Surulere"],
+  "Plateau": ["Barikin Ladi", "Bassa", "Bokkos", "Jos East", "Jos North", "Jos South", "Kanam", "Kanke", "Langtang North", "Langtang South", "Mangu", "Mikang", "Pankshin", "Qua'an Pan", "Riyom", "Shendam", "Wase"],
+  "Rivers": ["Abua/Odual", "Ahoada East", "Ahoada West", "Akuku Toru", "Andoni", "Asari-Toru", "Bonny", "Degema", "Emohua", "Eleme", "Etche", "Gokana", "Ikwerre", "Khana", "Obio/Akpor", "Ogba/Egbema/Ndoni", "Ogu/Bolo", "Okrika", "Omumma", "Opobo/Nkoro", "Oyigbo", "Port-Harcourt", "Tai"],
+  "Sokoto": ["Binji", "Bodinga", "Dange-shnsi", "Gada", "Goronyo", "Gudu", "Gawabawa", "Illela", "Isa", "Kware", "kebbe", "Rabah", "Sabon birni", "Shagari", "Silame", "Sokoto North", "Sokoto South", "Tambuwal", "Tqngaza", "Tureta", "Wamako", "Wurno", "Yabo"],
+  "Taraba": ["Ardo-kola", "Bali", "Donga", "Gashaka", "Cassol", "Ibi", "Jalingo", "Karin-Lamido", "Kurmi", "Lau", "Sardauna", "Takum", "Ussa", "Wukari", "Yorro", "Zing"],
+  "Yobe": ["Bade", "Bursari", "Damaturu", "Fika", "Fune", "Geidam", "Gujba", "Gulani", "Jakusko", "Karasuwa", "Karawa", "Machina", "Nangere", "Nguru Potiskum", "Tarmua", "Yunusari", "Yusufari"],
+  "Zamfara": ["Anka", "Bakura", "Birnin Magaji", "Bukkuyum", "Bungudu", "Gummi", "Gusau", "Kaura", "Namoda", "Maradun", "Maru", "Shinkafi", "Talata Mafara", "Tsafe", "Zurmi"]
+};
+
+  function populateStatesAndLGAs(stateSelectId, lgaSelectId) {
+    const stateSelect = document.getElementById(stateSelectId);
+    const lgaSelect = document.getElementById(lgaSelectId);
+
+    Object.keys(nigeriaLGAs).forEach(state => {
+      const opt = document.createElement("option");
+      opt.value = state;
+      opt.textContent = state;
+      stateSelect.appendChild(opt);
+    });
+
+    stateSelect.addEventListener("change", function() {
+      const lgas = nigeriaLGAs[this.value] || [];
+      lgaSelect.innerHTML = '<option value="">Select LGA</option>';
+      lgas.forEach(lga => {
+        const opt = document.createElement("option");
+        opt.value = lga;
+        opt.textContent = lga;
+        lgaSelect.appendChild(opt);
+      });
+    });
+  }
+
+  // Initial population for the main address fields
+  populateStatesAndLGAs("residentialState", "residentialLGA");
+  populateStatesAndLGAs("businessState", "businessLGA");
+  populateStatesAndLGAs("witnessState", "witnessLGA");
+  populateStatesAndLGAs("secretaryState", "secretaryLGA");
+
+  // Function to dynamically add director fields
+  let directorCount = 1;
+  function addDirectorField() {
+    directorCount++;
+    const container = document.getElementById("additionalDirectorsContainer");
+    const newDirectorHtml = `
+      <div class="director-item border p-3 mb-3 rounded">
+          <h6>Director ${directorCount}</h6>
+          <input name="Director ${directorCount} First Name" class="form-control mb-2" placeholder="First Name">
+          <input name="Director ${directorCount} Last Name" class="form-control mb-2" placeholder="Last Name">
+          <label>State</label>
+          <select name="Director ${directorCount} State" class="form-control mb-2 director-state">
+            <option value="">Select State</option>
+          </select>
+          <label>LGA</label>
+          <select name="Director ${directorCount} LGA" class="form-control mb-2 director-lga">
+            <option value="">Select LGA</option>
+          </select>
+          <input name="Director ${directorCount} City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village">
+          <input name="Director ${directorCount} House No" class="form-control mb-2" placeholder="House Number">
+          <input name="Director ${directorCount} Street Name" class="form-control mb-2" placeholder="Street Name">
+          <label>Means of ID (PVC/National ID)</label>
+          <input name="Director ${directorCount} Means of ID" type="file" class="form-control mb-2">
+          <label>Date of Birth</label>
+          <input name="Director ${directorCount} Date of Birth" type="date" class="form-control mb-2">
+          <select name="Director ${directorCount} Gender" class="form-control mb-2">
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+          </select>
+          <input name="Director ${directorCount} Email" type="email" class="form-control mb-2" placeholder="Email">
+          <label>Signature</label>
+          <input name="Director ${directorCount} Signature" type="file" class="form-control mb-2">
+          <input name="Director ${directorCount} Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number">
+          <label>Passport photograph</label>
+          <input name="Director ${directorCount} Passport photograph" type="file" class="form-control mb-2">
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', newDirectorHtml);
+    // Re-populate states and LGAs for the newly added director fields
+    const newDirectorItem = container.lastElementChild;
+    const newStateSelect = newDirectorItem.querySelector(".director-state");
+    const newLgaSelect = newDirectorItem.querySelector(".director-lga");
+    populateDynamicLGAs(newStateSelect, newLgaSelect);
+  }
+
+  // Function to dynamically add shareholder fields
+  let shareholderCount = 1;
+  function addShareholderField() {
+    shareholderCount++;
+    const container = document.getElementById("shareholdersContainer");
+    const newShareholderHtml = `
+      <div class="shareholder-item border p-3 mb-3 rounded">
+          <h6>Shareholder ${shareholderCount}</h6>
+          <input name="Shareholder ${shareholderCount} First Name" class="form-control mb-2" placeholder="First Name" required>
+          <input name="Shareholder ${shareholderCount} Last Name" class="form-control mb-2" placeholder="Last Name" required>
+          <label>State</label>
+          <select name="Shareholder ${shareholderCount} State" class="form-control mb-2 shareholder-state" required>
+            <option value="">Select State</option>
+          </select>
+          <label>LGA</label>
+          <select name="Shareholder ${shareholderCount} LGA" class="form-control mb-2 shareholder-lga" required>
+            <option value="">Select LGA</option>
+          </select>
+          <input name="Shareholder ${shareholderCount} City/Town/Village" class="form-control mb-2" placeholder="City/Town/Village" required>
+          <input name="Shareholder ${shareholderCount} House No" class="form-control mb-2" placeholder="House Number" required>
+          <input name="Shareholder ${shareholderCount} Street Name" class="form-control mb-2" placeholder="Street Name" required>
+          <input name="Shareholder ${shareholderCount} Phone No" type="tel" class="form-control mb-2" placeholder="Phone Number" required>
+          <label>Date of Birth</label>
+          <input name="Shareholder ${shareholderCount} Date of Birth" type="date" class="form-control mb-2" required>
+          <input name="Shareholder ${shareholderCount} Email" type="email" class="form-control mb-2" placeholder="Email" required>
+          <label>Means of ID (PVC/National ID)</label>
+          <input name="Shareholder ${shareholderCount} Means of ID" type="file" class="form-control mb-2" required>
+          <label>Passport photograph</label>
+          <input name="Shareholder ${shareholderCount} Passport photograph" type="file" class="form-control mb-2" required>
+          <label>Signature</label>
+          <input name="Shareholder ${shareholderCount} Signature" type="file" class="form-control mb-2" required>
+          <input name="Shareholder ${shareholderCount} Percentage of Shares" class="form-control mb-2" placeholder="Percentage of Shares (e.g., 50%)" required>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', newShareholderHtml);
+    // Re-populate states and LGAs for the newly added shareholder fields
+    const newShareholderItem = container.lastElementChild;
+    const newStateSelect = newShareholderItem.querySelector(".shareholder-state");
+    const newLgaSelect = newShareholderItem.querySelector(".shareholder-lga");
+    populateDynamicLGAs(newStateSelect, newLgaSelect);
+  }
+
+  // Helper function for dynamic state/LGA population for newly added fields
+  function populateDynamicLGAs(stateSelectElement, lgaSelectElement) {
+      Object.keys(nigeriaLGAs).forEach(state => {
+          const opt = document.createElement("option");
+          opt.value = state;
+          opt.textContent = state;
+          stateSelectElement.appendChild(opt);
+      });
+
+      stateSelectElement.addEventListener("change", function() {
+          const lgas = nigeriaLGAs[this.value] || [];
+          lgaSelectElement.innerHTML = '<option value="">Select LGA</option>';
+          lgas.forEach(lga => {
+              const opt = document.createElement("option");
+              opt.value = lga;
+              opt.textContent = lga;
+              lgaSelectElement.appendChild(opt);
+          });
+      });
+  }
+
+  // Populate states and LGAs for initial dynamic fields (Director 1 and Shareholder 1)
+  document.querySelectorAll('.director-state').forEach(select => populateDynamicLGAs(select, select.nextElementSibling.nextElementSibling));
+  document.querySelectorAll('.shareholder-state').forEach(select => populateDynamicLGAs(select, select.nextElementSibling.nextElementSibling));
+
+</script>
+</body>
+</html>
